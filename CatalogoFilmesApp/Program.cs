@@ -1,6 +1,12 @@
+using CatalogoFilmesApp.Domain.Interfaces;
+using CatalogoFilmesApp.Infrastructure.Repositories;
+using CatalogoFilmesApp.Infrastructure.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
+builder.Services.AddSingleton<IFilmesRepository, FilmesRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -1,0 +1,131 @@
+[
+  {
+    "ContainingType": "CatalogoFilmesApp.API.Controllers.FilmesController",
+    "Method": "GetAll",
+    "RelativePath": "Filmes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "CatalogoFilmesApp.Domain.Models.Filme",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CatalogoFilmesApp.API.Controllers.FilmesController",
+    "Method": "CreateFilme",
+    "RelativePath": "Filmes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filmeDto",
+        "Type": "CatalogoFilmesApp.Domain.DTOs.FilmesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CatalogoFilmesApp.Domain.Models.Filme",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CatalogoFilmesApp.API.Controllers.FilmesController",
+    "Method": "GetById",
+    "RelativePath": "Filmes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CatalogoFilmesApp.Domain.Models.Filme",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CatalogoFilmesApp.API.Controllers.FilmesController",
+    "Method": "DeleteFilme",
+    "RelativePath": "Filmes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CatalogoFilmesApp.Domain.Models.Filme",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CatalogoFilmesApp.API.Controllers.FilmesController",
+    "Method": "UpdateFilme",
+    "RelativePath": "Filmes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "filmeDto",
+        "Type": "CatalogoFilmesApp.Domain.DTOs.FilmesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CatalogoFilmesApp.Domain.Models.Filme",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
