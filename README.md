@@ -1,8 +1,8 @@
-# Projeto Catalogo de Filmes WebAPI
+# Projeto Catalogo de Filmes WebAPI (ASPNET Core)
 
 ### Em que consiste este projeto?
 
-Estou criando este projeto, para explorar as tecnologias mais usadas em criação de API, para ir ganhando conhecimento e melhorar minhas habilidades.
+Estou criando este projeto, para explorar as tecnologias mais usadas em criação de API em ASPNET Core, para ir ganhando conhecimento e melhorar minhas habilidades.
 
 No primeiro commit adicionei o projeto.
 Neste segundo commit, adicionei as Bibliotecas:
