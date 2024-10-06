@@ -9,4 +9,4 @@ Neste segundo commit, adicionei as Bibliotecas:
 - Dapper (2.1.35)
 - Microsoft.Data.SqlClient (5.2.2)
 
-No segundo commit foi implementado uma estrutura de DDD(Domain Driven Design), DTO, IDbConnectionFactory(Fábrica), Interfaces, Service e Controller.
+No segundo commit foi implementado uma estrutura de DDD(Domain Driven Design)(um pouco), DTO, IDbConnectionFactory(Fábrica), Interfaces, Service e Controller.
