@@ -8,7 +8,7 @@ Estou criando este projeto, para explorar as tecnologias mais usadas em criaçã
   * (https://github.com/AtonementAndy/catalogo-filmes-api/tree/028490677b89dfd103531ba902809ea3e6bbf14a).
 
 Neste primeiro commit adicionei a base do projeto. Adicionando alguns pacotes:
-Dapper (2.1.35)
+Dapper (2.1.35), 
 Microsoft.Data.SqlClient (5.2.2)
 
 2. [adicionado, DTO, Service, Interfaces e controllers]
