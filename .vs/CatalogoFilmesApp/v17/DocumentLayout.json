@@ -62,8 +62,7 @@
               "RelativeToolTip": "CatalogoFilmesApp\\Application\\CommandsHandler\\CreateFilmeCommandHandler.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:10:05.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T12:10:05.001Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "CatalogoFilmesApp\\Application\\QueriesHandler\\GetFilmeByIdQueryHandler.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T10:08:15.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T10:08:15.604Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "CatalogoFilmesApp\\Application\\Queries\\GetFilmeByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T10:08:11.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T10:08:11.815Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAqwBkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:16:03.393Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T08:16:03.393Z"
             },
             {
               "$type": "Document",
