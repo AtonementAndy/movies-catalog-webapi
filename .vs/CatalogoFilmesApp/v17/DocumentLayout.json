@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\application\\querieshandler\\getallfilmesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\application\\querieshandler\\getallfilmesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\application\\querieshandler\\getfilmebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\application\\querieshandler\\getfilmebyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\application\\commandshandler\\createfilmecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\application\\commandshandler\\createfilmecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\application\\queries\\getfilmebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\application\\queries\\getfilmebyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\infrastructure\\repositories\\filmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\infrastructure\\repositories\\filmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,26 +27,7 @@
       "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\api\\controllers\\filmescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\Documents\\Programming\\studies\\BandoDeDados\\Basic-Commands.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\domain\\interfaces\\ifilmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\domain\\interfaces\\ifilmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\Documents\\Programming\\studies\\BandoDeDados\\Basic-Commands.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery6.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Wsfurnas\\AppData\\Local\\Temp\\gyqaxzsr..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,68 +37,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SQLQuery6.sql ",
-              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\SQLQuery6.sql",
-              "RelativeDocumentMoniker": "SQLQuery6.sql",
-              "ToolTip": "SQLQuery6.sql *",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-05T23:05:48.375Z",
+              "DocumentIndex": 0,
+              "Title": "GetAllFilmesQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\QueriesHandler\\GetAllFilmesQueryHandler.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Application\\QueriesHandler\\GetAllFilmesQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\QueriesHandler\\GetAllFilmesQueryHandler.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Application\\QueriesHandler\\GetAllFilmesQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T12:15:27.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Basic-Commands.sql ",
-              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\studies\\BandoDeDados\\Basic-Commands.sql",
-              "RelativeDocumentMoniker": "..\\studies\\BandoDeDados\\Basic-Commands.sql",
-              "ToolTip": "Basic-Commands.sql ",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-05T22:10:25.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IFilmesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Domain\\Interfaces\\IFilmesRepository.cs",
-              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Domain\\Interfaces\\IFilmesRepository.cs",
-              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Domain\\Interfaces\\IFilmesRepository.cs",
-              "RelativeToolTip": "CatalogoFilmesApp\\Domain\\Interfaces\\IFilmesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Title": "CreateFilmeCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\CommandsHandler\\CreateFilmeCommandHandler.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Application\\CommandsHandler\\CreateFilmeCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\CommandsHandler\\CreateFilmeCommandHandler.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Application\\CommandsHandler\\CreateFilmeCommandHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T22:48:06.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FilmesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
-              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
-              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
-              "RelativeToolTip": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAqwDQAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T22:47:39.506Z",
+              "WhenOpened": "2024-10-07T12:10:05.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GetFilmeByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\QueriesHandler\\GetFilmeByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Application\\QueriesHandler\\GetFilmeByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\QueriesHandler\\GetFilmeByIdQueryHandler.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Application\\QueriesHandler\\GetFilmeByIdQueryHandler.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T10:08:15.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetFilmeByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\Queries\\GetFilmeByIdQuery.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Application\\Queries\\GetFilmeByIdQuery.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Application\\Queries\\GetFilmeByIdQuery.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Application\\Queries\\GetFilmeByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T10:08:11.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FilmesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwBkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T08:16:03.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "gyqaxzsr..sql",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\AppData\\Local\\Temp\\gyqaxzsr..sql",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\gyqaxzsr..sql",
+              "ToolTip": "C:\\Users\\Wsfurnas\\AppData\\Local\\Temp\\gyqaxzsr..sql",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\gyqaxzsr..sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-10-07T07:20:47.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FilmesController.cs",
               "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
               "RelativeDocumentMoniker": "CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
               "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
               "RelativeToolTip": "CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAAEoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwB0AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T22:00:48.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T22:00:48.28Z"
             }
           ]
         }

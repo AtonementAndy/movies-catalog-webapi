@@ -8,6 +8,7 @@ namespace CatalogoFilmesApp.Domain.Interfaces
         Task<List<Filme>> GetAllAsync();
         Task<Filme> AddAsync(Filme filme);
         Task UpdateAsync(Filme filme);
+        //Task UpdatePatchAsync(Filme filme);
         Task DeleteAsync(int id);
     }
 }

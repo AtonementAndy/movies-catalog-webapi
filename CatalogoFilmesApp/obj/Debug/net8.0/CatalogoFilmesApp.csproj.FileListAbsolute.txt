@@ -75,3 +75,4 @@ C:\Users\Wsfurnas\Documents\Programming\CatalogoFilmesApp\CatalogoFilmesApp\obj\
 C:\Users\Wsfurnas\Documents\Programming\CatalogoFilmesApp\CatalogoFilmesApp\obj\Debug\net8.0\CatalogoFilmesApp.pdb
 C:\Users\Wsfurnas\Documents\Programming\CatalogoFilmesApp\CatalogoFilmesApp\obj\Debug\net8.0\CatalogoFilmesApp.genruntimeconfig.cache
 C:\Users\Wsfurnas\Documents\Programming\CatalogoFilmesApp\CatalogoFilmesApp\obj\Debug\net8.0\ref\CatalogoFilmesApp.dll
+C:\Users\Wsfurnas\Documents\Programming\CatalogoFilmesApp\CatalogoFilmesApp\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

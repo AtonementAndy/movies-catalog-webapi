@@ -1,9 +1,8 @@
-﻿using CatalogoFilmesApp.Domain.DTOs;
-using CatalogoFilmesApp.Domain.Interfaces;
-using CatalogoFilmesApp.Domain.Models;
-using Microsoft.AspNetCore.Http;
+﻿using CatalogoFilmesApp.Application.Commands;
+using CatalogoFilmesApp.Application.Queries;
+using CatalogoFilmesApp.Domain.DTOs;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 
 namespace CatalogoFilmesApp.API.Controllers
 {
@@ -11,80 +10,45 @@ namespace CatalogoFilmesApp.API.Controllers
     [ApiController]
     public class FilmesController : ControllerBase
     {
-        private readonly IFilmesRepository _filmeRepository;
+        private readonly IMediator _mediator;
 
-        public FilmesController(IFilmesRepository filmeRepository)
+        public FilmesController(IMediator mediator)
         {
-            _filmeRepository = filmeRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<ActionResult<Filme>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            var filme = await _filmeRepository.GetAllAsync();
-            return Ok(filme);
+            var filmes = await _mediator.Send(new GetAllFilmesQuery());
+            return Ok(filmes);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Filme>> GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var filme = await _filmeRepository.GetByIdAsync(id);
-
-            if (filme is null)
-                NotFound();
-
+            var filme = await _mediator.Send(new GetFilmeByIdQuery(id));
             return Ok(filme);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Filme>> CreateFilme([FromBody]  FilmesDto filmeDto)
+        public async Task<IActionResult> PostFilme([FromBody] FilmesDto filmesDto)
         {
-            if (filmeDto is not null)
-            {
-                var filme = new Filme
-                {
-                    Id = filmeDto.Id,
-                    Titulo = filmeDto.Titulo,
-                    Descricao = filmeDto.Descricao,
-                    Autor = filmeDto.Autor,
-                    Ativo = filmeDto.Ativo
-                };
-
-                await _filmeRepository.AddAsync(filme);
-                return CreatedAtAction(nameof(CreateFilme), new { id = filme.Id }, filme);
-            }
-            
-            return BadRequest();
+            var filme = await _mediator.Send(new CreateFilmeCommand { FilmesDto = filmesDto });
+            return CreatedAtAction(nameof(PostFilme), new { id = filme.Id }, filme);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Filme>> DeleteFilme(int id)
+        [HttpPut]
+        public async Task<IActionResult> UpdateFilme([FromBody] FilmesDto filmesDto)
         {
-            var filme = await _filmeRepository.GetByIdAsync(id);
-
-            if (filme is null)
-                NotFound();
-
-            await _filmeRepository.DeleteAsync(filme.Id);
-
+            await _mediator.Send(new UpdateFilmeCommand { FilmesDto = filmesDto });
             return NoContent();
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Filme>> UpdateFilme(int id, FilmesDto filmeDto)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteFilme(int id)
         {
-            var filme = await _filmeRepository.GetByIdAsync(id);
-
-            if (filme is null)
-                NotFound();
-
-            filme.Titulo = filmeDto.Titulo;
-            filme.Descricao = filmeDto.Descricao;
-            filme.Autor = filmeDto.Autor;
-            filme.Ativo = filmeDto.Ativo;
-
-            await _filmeRepository.UpdateAsync(filme);
-
+            await _mediator.Send(new DeleteFilmeCommand(id));
             return NoContent();
         }
     }

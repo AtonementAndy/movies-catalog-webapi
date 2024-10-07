@@ -18,7 +18,7 @@ namespace CatalogoFilmesApp.Infrastructure.Service
 
         public IDbConnection CreateConnection()
         {
-            return new SqlConnection(_connectionString);
+            return new SqlConnection(_connectionString); 
         }
     }
 }
