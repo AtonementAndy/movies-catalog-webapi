@@ -24,4 +24,5 @@ Microsoft.Data.SqlClient (5.2.2), MediatR (11.1.0), MediatR.Extensions.Microsoft
 
 4. Modificações Model-DTO e adicionando try-catch
    * [Atualizações](https://github.com/AtonementAndy/catalogo-filmes-api/commit/cead2ee44ab151b02fb5a5dd0a36e713434ae22a)
+
 Atualizei a model e o DTO para um melhor encapsulamento. Mudei o DTO de class para record e adicionei "init" as propriedades, fazendo com que p DTO fiquei imutável na movimentação de dados. Essa é sua função, e não queremos modificações no meio do caminho. Também adicionar Try/Catch para evitar uma possível quebra do aplicativo, e também outra pequenas validações. 
