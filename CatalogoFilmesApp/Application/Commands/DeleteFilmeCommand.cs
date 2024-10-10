@@ -3,13 +3,8 @@ using MediatR;
 
 namespace CatalogoFilmesApp.Application.Commands
 {
-    public class DeleteFilmeCommand : IRequest<FilmesDto>
+    public class DeleteFilmeCommand(int id) : IRequest<FilmesDto>
     {
-        public int Id { get; set; }
-
-        public DeleteFilmeCommand(int id)
-        {
-            Id = id;
-        }
+        public int Id { get; set; } = id;
     }
 }

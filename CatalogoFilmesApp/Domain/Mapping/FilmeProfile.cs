@@ -8,7 +8,7 @@ namespace CatalogoFilmesApp.Domain.Mapping
     {
         public FilmeProfile()
         {
-            CreateMap<Filme, FilmesDto>();
+            CreateMap<Filme, FilmesDto>().ReverseMap();
         }
     }
 }

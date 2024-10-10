@@ -25,7 +25,7 @@ namespace CatalogoFilmesApp.Application.CommandsHandler
             _logger.LogInformation($"Atualizando filme {request.FilmesDto.Titulo}.");
 
             var filme = _mapper.Map<Filme>(request.FilmesDto);
-            await _filmesRepository.UpdateAsync(filme);
+            await _filmesRepository.UpdateAsync(filme.Id, request.FilmesDto);
             return _mapper.Map<FilmesDto>(filme);
         }
     }

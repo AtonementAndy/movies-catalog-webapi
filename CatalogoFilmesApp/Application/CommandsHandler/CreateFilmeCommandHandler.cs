@@ -24,8 +24,7 @@ namespace CatalogoFilmesApp.Application.CommandsHandler
         {
             _logger.LogInformation($"Cadastrando um novo filme: {request.FilmesDto.Titulo}");
 
-            var filme = _mapper.Map<Filme>(request.FilmesDto);
-            await _filmesRepository.AddAsync(filme);
+            var filme = await _filmesRepository.AddAsync(request.FilmesDto);
             return _mapper.Map<FilmesDto>(filme);
         }
     }

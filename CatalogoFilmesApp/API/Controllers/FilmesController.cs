@@ -25,7 +25,7 @@ namespace CatalogoFilmesApp.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var filme = await _mediator.Send(new GetFilmeByIdQuery(id));
             return Ok(filme);
@@ -39,7 +39,7 @@ namespace CatalogoFilmesApp.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateFilme([FromBody] FilmesDto filmesDto)
+        public async Task<IActionResult> UpdateFilme(FilmesDto filmesDto)
         {
             await _mediator.Send(new UpdateFilmeCommand { FilmesDto = filmesDto });
             return NoContent();
@@ -48,6 +48,9 @@ namespace CatalogoFilmesApp.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFilme(int id)
         {
+            if (id == 0)
+                return NotFound();
+
             await _mediator.Send(new DeleteFilmeCommand(id));
             return NoContent();
         }
