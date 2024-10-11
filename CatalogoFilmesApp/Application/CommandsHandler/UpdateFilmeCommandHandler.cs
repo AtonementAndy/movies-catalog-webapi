@@ -7,7 +7,7 @@ using MediatR;
 
 namespace CatalogoFilmesApp.Application.CommandsHandler
 {
-    public class UpdateFilmeCommandHandler : IRequestHandler<UpdateFilmeCommand, FilmesDto>
+    public class UpdateFilmeCommandHandler : IRequestHandler<UpdateFilmeCommand, AtualizarFilmeDto>
     {
         private readonly IFilmesRepository _filmesRepository;
         private readonly IMapper _mapper;
@@ -20,13 +20,13 @@ namespace CatalogoFilmesApp.Application.CommandsHandler
             _logger = logger;
         }
 
-        public async Task<FilmesDto> Handle(UpdateFilmeCommand request, CancellationToken cancellationToken)
+        public async Task<AtualizarFilmeDto> Handle(UpdateFilmeCommand request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"Atualizando filme {request.FilmesDto.Titulo}.");
+            _logger.LogInformation($"Atualizando filme {request.AtualizarFilmeDto.Titulo}.");
 
-            var filme = _mapper.Map<Filme>(request.FilmesDto);
-            await _filmesRepository.UpdateAsync(filme.Id, request.FilmesDto);
-            return _mapper.Map<FilmesDto>(filme);
+            var filme = _mapper.Map<Filme>(request.AtualizarFilmeDto);
+            await _filmesRepository.UpdateAsync(filme.Id, request.AtualizarFilmeDto);
+            return _mapper.Map<AtualizarFilmeDto>(filme);
         }
     }
 }

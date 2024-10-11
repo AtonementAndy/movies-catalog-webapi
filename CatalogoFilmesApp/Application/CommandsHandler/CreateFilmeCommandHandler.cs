@@ -22,9 +22,9 @@ namespace CatalogoFilmesApp.Application.CommandsHandler
 
         public async Task<FilmesDto> Handle(CreateFilmeCommand request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"Cadastrando um novo filme: {request.FilmesDto.Titulo}");
+            _logger.LogInformation($"Cadastrando um novo filme: {request.CriarFilmeDto.Titulo}");
 
-            var filme = await _filmesRepository.AddAsync(request.FilmesDto);
+            var filme = await _filmesRepository.AddAsync(request.CriarFilmeDto);
             return _mapper.Map<FilmesDto>(filme);
         }
     }

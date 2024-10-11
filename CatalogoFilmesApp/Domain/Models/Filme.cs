@@ -1,41 +1,54 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CatalogoFilmesApp.Domain.Models
 {
     public class Filme
     {
-        public Filme() { }
+        protected Filme() { }
 
-        public Filme(int id, string titulo, string descricao, string autor, DateTime dataCadastro, bool ativo)
+        public Filme(string titulo, string descricao, string autor)
         {
-            if (string.IsNullOrWhiteSpace(titulo)) throw new ArgumentException("Titulo é obrigatório.");
-            if (dataCadastro > DateTime.Now) throw new ArgumentException("Data de cadastro não pode ser no futuro.");
-            Id = id;
+            if (string.IsNullOrWhiteSpace(titulo))
+                throw new ArgumentException("Título é obrigatório.", nameof(titulo));
+
             Titulo = titulo;
             Descricao = descricao;
             Autor = autor;
-            DataCadastro = dataCadastro;
-            Ativo = ativo;
+            DataCadastro = DateTime.UtcNow;
+            Ativo = true;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; init; }
+        public int Id { get; private set; }
 
         [Required]
-        public string Titulo { get; init; } = string.Empty;
+        [MaxLength(200)]
+        public string Titulo { get; private set; } = string.Empty;
 
         [Required]
-        public string Descricao { get; init; } = string.Empty;
+        [MaxLength(1000)]
+        public string Descricao { get; private set; } = string.Empty;
 
         [Required]
-        public string Autor { get; init; } = string.Empty;
+        [MaxLength(100)]
+        public string Autor { get; private set; } = string.Empty;
 
-        [Required]
-        public DateTime DataCadastro { get; init; }
+        public DateTime DataCadastro { get; private set; }
 
-        [Required]
-        public bool Ativo { get; init; }
+        public bool Ativo { get; private set; }
+
+        public void Desativar() => Ativo = false;
+
+        public void Atualizar(string titulo, string descricao, string autor)
+        {
+            if (!string.IsNullOrWhiteSpace(titulo))
+                Titulo = titulo;
+
+            Descricao = descricao;
+            Autor = autor;
+        }
     }
 }

@@ -5,6 +5,6 @@ namespace CatalogoFilmesApp.Application.Commands
 {
     public class CreateFilmeCommand : IRequest<FilmesDto>
     {
-        public FilmesDto FilmesDto { get; set; } = default!;
+        public CriarFilmeDto CriarFilmeDto { get; set; } = default!;
     }
 }

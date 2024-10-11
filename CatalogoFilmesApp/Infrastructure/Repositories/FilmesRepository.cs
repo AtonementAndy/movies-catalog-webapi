@@ -8,80 +8,74 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
     public class FilmesRepository : IFilmesRepository
     {
         private readonly ILogger<FilmesRepository> _logger;
-        private readonly IDbConnectionFactory _dbConnectionFactory = default!;
+        private readonly IDbConnectionFactory _dbConnectionFactory;
 
         public FilmesRepository(ILogger<FilmesRepository> logger, IDbConnectionFactory dbConnectionFactory)
         {
-            _logger = logger;
-            _dbConnectionFactory = dbConnectionFactory;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory));
         }
 
-        public async Task<List<Filme>> GetAllAsync()
+        public async Task<IEnumerable<FilmesDto>> GetAllAsync()
         {
-            _logger.LogInformation("Buscando todos os filmes na classe Serviço FilmeRepository.");
-            const string sql = "SELECT * FROM Filmes";
+            _logger.LogInformation("Buscando todos os filmes.");
+            const string sql = "SELECT * FROM Filmes WHERE Ativo = 1";
             using var connection = _dbConnectionFactory.CreateConnection();
-            var filme = await connection.QueryAsync<Filme>(sql);
-
-            return filme.ToList();
+            return await connection.QueryAsync<FilmesDto>(sql);
         }
 
-        public async Task<Filme> GetByIdAsync(int id)
+        public async Task<FilmesDto> GetByIdAsync(int id)
         {
             if (id <= 0)
-                throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
+                throw new ArgumentException("Id deve ter um valor positivo.", nameof(id));
 
-            _logger.LogInformation($"Buscando filme por Id {id} na classe Serviço FilmeRepository");
-            const string query = "SELECT Id, Titulo, Descricao, DataCadastro, Autor, Ativo FROM Filmes WHERE Id = @Id";
+            _logger.LogInformation($"Buscando filme por Id {id}.");
+            const string query = "SELECT * FROM Filmes WHERE Id = @Id AND Ativo = 1";
 
-            try
+            using var connection = _dbConnectionFactory.CreateConnection();
+            var filme = await connection.QuerySingleOrDefaultAsync<FilmesDto>(query, new { Id = id });
+
+            if (filme is null)
             {
-                using var connection = _dbConnectionFactory.CreateConnection();
-                var filme = await connection.QuerySingleOrDefaultAsync<Filme>(query, new { Id = id });
-
-                if (filme is null)
-                {
-                    _logger.LogWarning($"Filme com Id {id} não encontrado.");
-                    throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
-                }
-
-                return filme;
+                _logger.LogWarning($"Filme com Id {id} não encontrado.");
+                throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Erro ao buscar filme por Id");
-                throw;
-            }
+
+            return filme;
         }
 
-        public async Task<Filme> AddAsync(FilmesDto filmesDto)
+        public async Task<FilmesDto> AddAsync(CriarFilmeDto criarFilmeDto)
         {
-            if (filmesDto is null)
-                throw new ArgumentNullException(nameof(filmesDto), "Filme não pode ser nulo.");
+            if (criarFilmeDto is null)
+                throw new ArgumentNullException(nameof(criarFilmeDto), "Dados do filme não podem ser nulos.");
 
-            _logger.LogInformation("Criando um novo filme na classe de Serviço FilmeRepository.");
-            const string query = "INSERT INTO Filmes (Titulo, Descricao, DataCadastro, Autor, Ativo) VALUES (@Titulo, @Descricao, @DataCadastro, @Autor, @Ativo); SELECT CAST(SCOPE_IDENTITY() as int);";                
+            _logger.LogInformation("Criando um novo filme.");
+            const string query = @"
+                INSERT INTO Filmes (Titulo, Descricao, Autor, DataCadastro, Ativo) 
+                VALUES (@Titulo, @Descricao, @Autor, @DataCadastro, @Ativo);
+                SELECT CAST(SCOPE_IDENTITY() as int);";
 
-            try
+            var parameters = new
             {
-                using var connection = _dbConnectionFactory.CreateConnection();
-                var id = await connection.QuerySingleAsync<int>(query, filmesDto);
+                criarFilmeDto.Titulo,
+                criarFilmeDto.Descricao,
+                criarFilmeDto.Autor,
+                DataCadastro = DateTime.UtcNow,
+                Ativo = true
+            };
 
-                return new Filme
-                (
-                    id, 
-                    filmesDto.Titulo, 
-                    filmesDto.Descricao, 
-                    filmesDto.Autor, 
-                    filmesDto.DataCadastro, 
-                    filmesDto.Ativo
-                );
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Erro ao cadastrar filme.");
-                throw;
-            }
+            using var connection = _dbConnectionFactory.CreateConnection();
+            var id = await connection.QuerySingleAsync<int>(query, parameters);
+
+            return new FilmesDto 
+            { 
+                Id = id, 
+                Titulo = criarFilmeDto.Titulo, 
+                Descricao = criarFilmeDto.Descricao, 
+                Autor = criarFilmeDto.Autor, 
+                DataCadastro = DateTime.UtcNow, 
+                Ativo = true 
+            };
         }
 
         public async Task DeleteAsync(int id)
@@ -89,50 +83,68 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
             if (id <= 0)
                 throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
 
-            _logger.LogInformation("Deletando um filme na classe de Serviço FilmeRepository.");
-            var parameter = new { id };
-            const string query = "UPDATE Filmes SET Ativo = 0 WHERE Id = @id";
+            _logger.LogInformation($"Desativando filme com Id {id}.");
+            const string query = "UPDATE Filmes SET Ativo = 0 WHERE Id = @Id";
 
             try
             {
                 using var connection = _dbConnectionFactory.CreateConnection();
-                await connection.ExecuteAsync(query, parameter);
+                var linhasAfetadas = await connection.ExecuteAsync(query, new { Id = id });
+
+                if (linhasAfetadas == 0)
+                    _logger.LogWarning($"Nenhum filme encontrado com Id {id} para desativação.");
+                else
+                    _logger.LogInformation($"Filme com Id {id} desativado com sucesso.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao deletar filme.");
+                _logger.LogError(ex, $"Erro ao desativar filme com Id {id}.");
                 throw;
             }
         }
 
-        public async Task UpdateAsync(int id, FilmesDto filmeDto)
+        public async Task UpdateAsync(int id, AtualizarFilmeDto atualizarFilmeDto)
         {
             if (id <= 0)
                 throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
+                
+            var filme = await GetByIdAsync(id);
+            if (filme is null)
+                throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
 
-            if (filmeDto is null)
-                throw new ArgumentNullException(nameof(filmeDto), "Filme não pode ser nulo.");
-
-            _logger.LogInformation("Atualizando um filme .");
-            const string query = "UPDATE Filmes SET Titulo = @Titulo, Descricao = @Descricao, Autor = @Autor, DataCadastro = @DataCadastro, Ativo = @Ativo WHERE Id = @Id";
+            _logger.LogInformation($"Atualizando filme com Id {id}.");
+            const string query = @"
+                UPDATE Filmes SET 
+                    Titulo = @Titulo, 
+                    Descricao = @Descricao, 
+                    Autor = @Autor, 
+                    DataCadastro = @DataCadastro, 
+                    Ativo = @Ativo 
+                WHERE Id = @Id";
 
             try
             {
-                using var connection = _dbConnectionFactory.CreateConnection();
-                var affectedRows = await connection.ExecuteAsync(query, new { filmeDto.Titulo, filmeDto.Descricao, filmeDto.Autor, filmeDto.DataCadastro, filmeDto.Ativo, Id = id });
+                var connection = _dbConnectionFactory.CreateConnection();
+                var linhasAfetadas = await connection.ExecuteAsync(query, 
+                    new {
+                        atualizarFilmeDto.Titulo,
+                        atualizarFilmeDto.Descricao,
+                        atualizarFilmeDto.Autor,
+                        DataCadastro = DateTime.UtcNow,
+                        Ativo = true,
+                        Id = id
+                    });
 
-                if (affectedRows == 0)
+                if (linhasAfetadas == 0)
                     _logger.LogWarning($"Nenhum filme encontrado com Id {id} para atualização.");
                 else
-                    _logger.LogInformation($"Filme com Id {id} atualizado com sucesso.");
-
+                    _logger.LogInformation($"Filme com Id {id} atualizado com sucesso.");    
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao atualizar filme com Id {Id}.", id);
+                _logger.LogError(ex, "Erro ao atualizar filme.");
                 throw;
-            }
+            };
         }
     }
 }
-

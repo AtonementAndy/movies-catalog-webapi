@@ -32,16 +32,16 @@ namespace CatalogoFilmesApp.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostFilme([FromBody] FilmesDto filmesDto)
+        public async Task<IActionResult> PostFilme([FromBody] CriarFilmeDto criarFilmeDto)
         {
-            var filme = await _mediator.Send(new CreateFilmeCommand { FilmesDto = filmesDto });
+            var filme = await _mediator.Send(new CreateFilmeCommand { CriarFilmeDto = criarFilmeDto });
             return CreatedAtAction(nameof(PostFilme), new { id = filme.Id }, filme);
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateFilme(FilmesDto filmesDto)
+        public async Task<IActionResult> UpdateFilme(AtualizarFilmeDto atualizarFilmeDto)
         {
-            await _mediator.Send(new UpdateFilmeCommand { FilmesDto = filmesDto });
+            await _mediator.Send(new UpdateFilmeCommand { AtualizarFilmeDto = atualizarFilmeDto });
             return NoContent();
         }
 

@@ -5,10 +5,10 @@ namespace CatalogoFilmesApp.Domain.Interfaces
 {
     public interface IFilmesRepository
     {
-        Task<Filme> GetByIdAsync(int id);
-        Task<List<Filme>> GetAllAsync();
-        Task<Filme> AddAsync(FilmesDto filmeDto);
-        Task UpdateAsync(int id, FilmesDto filmeDto);
+        Task<FilmesDto> GetByIdAsync(int id);
+        Task<IEnumerable<FilmesDto>> GetAllAsync();
+        Task<FilmesDto> AddAsync(CriarFilmeDto criarFilmeDto);
+        Task UpdateAsync(int id, AtualizarFilmeDto atualizarFilmeDto);
         //Task UpdatePatchAsync(Filme filme);
         Task DeleteAsync(int id);
     }

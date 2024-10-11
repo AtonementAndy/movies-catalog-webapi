@@ -9,6 +9,8 @@ namespace CatalogoFilmesApp.Domain.Mapping
         public FilmeProfile()
         {
             CreateMap<Filme, FilmesDto>().ReverseMap();
+            CreateMap<CriarFilmeDto, Filme>().ReverseMap();
+            CreateMap<AtualizarFilmeDto, Filme>().ReverseMap();
         }
     }
 }

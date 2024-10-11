@@ -3,8 +3,8 @@ using MediatR;
 
 namespace CatalogoFilmesApp.Application.Commands
 {
-    public class UpdateFilmeCommand : IRequest<FilmesDto>
+    public class UpdateFilmeCommand : IRequest<AtualizarFilmeDto>
     {
-        public FilmesDto FilmesDto { get; set; } = default!;
+        public AtualizarFilmeDto AtualizarFilmeDto { get; set; } = default!;
     }
 }
