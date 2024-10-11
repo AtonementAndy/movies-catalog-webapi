@@ -25,4 +25,4 @@ Microsoft.Data.SqlClient (5.2.2), MediatR (11.1.0), MediatR.Extensions.Microsoft
 4. Adicionando melhorias e mais DTOs
  * [Implementando model e dtos](https://github.com/AtonementAndy/catalogo-filmes-api/commit/f5c44226d8ebfd33e02a4a365966ddb80b166b6a)
 
-Adicionar melhorias de encapsulamento da model, criando métodos, e mais Dtos. Creio que assim, a model está inacessível externamente e os dtos ficaram "imutáveis", trocando de class para "record" e usando a palavra-chave "init".
+Adicionei melhorias de encapsulamento da model, criando métodos, e mais Dtos. Creio que assim, a model está inacessível externamente e os dtos ficaram "imutáveis", trocando de class para "record" e usando a palavra-chave "init".
