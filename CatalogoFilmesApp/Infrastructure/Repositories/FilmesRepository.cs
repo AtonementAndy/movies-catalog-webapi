@@ -12,8 +12,8 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
 
         public FilmesRepository(ILogger<FilmesRepository> logger, IDbConnectionFactory dbConnectionFactory)
         {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory));
+            _logger = logger;
+            _dbConnectionFactory = dbConnectionFactory;
         }
 
         public async Task<IEnumerable<FilmesDto>> GetAllAsync()
@@ -55,27 +55,28 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
                 VALUES (@Titulo, @Descricao, @Autor, @DataCadastro, @Ativo);
                 SELECT CAST(SCOPE_IDENTITY() as int);";
 
-            var parameters = new
+            try
             {
-                criarFilmeDto.Titulo,
-                criarFilmeDto.Descricao,
-                criarFilmeDto.Autor,
-                DataCadastro = DateTime.UtcNow,
-                Ativo = true
-            };
+                using var connection = _dbConnectionFactory.CreateConnection();
+                var id = await connection.QuerySingleAsync<int>(query, criarFilmeDto);
 
-            using var connection = _dbConnectionFactory.CreateConnection();
-            var id = await connection.QuerySingleAsync<int>(query, parameters);
+                return new FilmesDto
+                {
+                    Id = id,
+                    Titulo = criarFilmeDto.Titulo,
+                    Descricao = criarFilmeDto.Descricao,
+                    Autor = criarFilmeDto.Autor,
+                    DataCadastro = DateTime.UtcNow,
+                    Ativo = true
+                };
 
-            return new FilmesDto 
-            { 
-                Id = id, 
-                Titulo = criarFilmeDto.Titulo, 
-                Descricao = criarFilmeDto.Descricao, 
-                Autor = criarFilmeDto.Autor, 
-                DataCadastro = DateTime.UtcNow, 
-                Ativo = true 
-            };
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Ocorreu um erro ao cadastrar o filme {criarFilmeDto.Titulo}.", ex.Message);
+                throw;
+                //return Results.Conflict(new { Error = ex.Message });
+            }
         }
 
         public async Task DeleteAsync(int id)
@@ -107,10 +108,8 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
         {
             if (id <= 0)
                 throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
-                
-            var filme = await GetByIdAsync(id);
-            if (filme is null)
-                throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
+
+            //var filme = await GetByIdAsync(id) ?? throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
 
             _logger.LogInformation($"Atualizando filme com Id {id}.");
             const string query = @"
@@ -122,23 +121,25 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
                     Ativo = @Ativo 
                 WHERE Id = @Id";
 
+            var parameters = new
+            {
+                atualizarFilmeDto.Titulo,
+                atualizarFilmeDto.Descricao,
+                atualizarFilmeDto.Autor,
+                DataCadastro = DateTime.UtcNow,
+                Ativo = true,
+                Id = id
+            };
+
             try
             {
                 var connection = _dbConnectionFactory.CreateConnection();
-                var linhasAfetadas = await connection.ExecuteAsync(query, 
-                    new {
-                        atualizarFilmeDto.Titulo,
-                        atualizarFilmeDto.Descricao,
-                        atualizarFilmeDto.Autor,
-                        DataCadastro = DateTime.UtcNow,
-                        Ativo = true,
-                        Id = id
-                    });
+                var linhasAfetadas = await connection.ExecuteAsync(query, parameters);
 
                 if (linhasAfetadas == 0)
                     _logger.LogWarning($"Nenhum filme encontrado com Id {id} para atualização.");
                 else
-                    _logger.LogInformation($"Filme com Id {id} atualizado com sucesso.");    
+                    _logger.LogInformation($"Filme com Id {id} atualizado com sucesso.");
             }
             catch (Exception ex)
             {

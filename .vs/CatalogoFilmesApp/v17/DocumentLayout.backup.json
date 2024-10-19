@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\api\\controllers\\filmescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\api\\controllers\\filmescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\infrastructure\\repositories\\filmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\infrastructure\\repositories\\filmesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|c:\\users\\wsfurnas\\documents\\programming\\catalogofilmesapp\\catalogofilmesapp\\domain\\dtos\\filmesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8A8F09B-C1F5-48F9-8B2C-415C335D26DE}|CatalogoFilmesApp\\CatalogoFilmesApp.csproj|solutionrelative:catalogofilmesapp\\domain\\dtos\\filmesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FilmesController.cs",
-              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
-              "RelativeDocumentMoniker": "CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
-              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
-              "RelativeToolTip": "CatalogoFilmesApp\\API\\Controllers\\FilmesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABHAAAAAAAAAA==",
+              "Title": "FilmesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Infrastructure\\Repositories\\FilmesRepository.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwBYAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T19:27:57.39Z",
+              "WhenOpened": "2024-10-12T19:56:18.365Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FilmesDto.cs",
+              "DocumentMoniker": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Domain\\DTOs\\FilmesDto.cs",
+              "RelativeDocumentMoniker": "CatalogoFilmesApp\\Domain\\DTOs\\FilmesDto.cs",
+              "ToolTip": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\Domain\\DTOs\\FilmesDto.cs",
+              "RelativeToolTip": "CatalogoFilmesApp\\Domain\\DTOs\\FilmesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T23:18:15.09Z"
             }
           ]
         }
