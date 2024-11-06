@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj": {}
+    "C:\\Users\\WSFurnas\\Documents\\Programming\\movies-catalog-webapi\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj": {
+    "C:\\Users\\WSFurnas\\Documents\\Programming\\movies-catalog-webapi\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj",
+        "projectUniqueName": "C:\\Users\\WSFurnas\\Documents\\Programming\\movies-catalog-webapi\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj",
         "projectName": "CatalogoFilmesApp",
-        "projectPath": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj",
-        "packagesPath": "C:\\Users\\Wsfurnas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Wsfurnas\\Documents\\Programming\\CatalogoFilmesApp\\CatalogoFilmesApp\\obj\\",
+        "projectPath": "C:\\Users\\WSFurnas\\Documents\\Programming\\movies-catalog-webapi\\CatalogoFilmesApp\\CatalogoFilmesApp.csproj",
+        "packagesPath": "C:\\Users\\WSFurnas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\WSFurnas\\Documents\\Programming\\movies-catalog-webapi\\CatalogoFilmesApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Wsfurnas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\WSFurnas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

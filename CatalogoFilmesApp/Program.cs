@@ -1,3 +1,4 @@
+using CatalogoFilmesApp.API.Middleware;
 using CatalogoFilmesApp.Domain.Interfaces;
 using CatalogoFilmesApp.Infrastructure.Repositories;
 using CatalogoFilmesApp.Infrastructure.Service;
@@ -33,6 +34,8 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
