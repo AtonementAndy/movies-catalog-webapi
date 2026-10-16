@@ -4,31 +4,31 @@
 [![C#](https://img.shields.io/badge/C%23-11-239120?logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Uma Web API RESTful para gerenciamento de catálogo de filmes, construída com ASP.NET Core 8, implementando padrões modernos de arquitetura e boas práticas de desenvolvimento.
+A RESTful Web API for managing a movie catalog, built with ASP.NET Core 8, implementing modern architectural patterns and development best practices.
 
-## 🚀 Tecnologias e Padrões
+## 🚀 Technologies and Patterns
 
-### Stack Principal
-- **ASP.NET Core 8.0** - Framework web moderno e performático
-- **C# 11** - Linguagem com recursos avançados
-- **Dapper 2.1.35** - Micro ORM de alta performance
-- **SQL Server** - Banco de dados relacional
+### Main Stack
+- **ASP.NET Core 8.0** - Modern and high-performance web framework
+- **C# 11** - Language with advanced features
+- **Dapper 2.1.35** - High-performance Micro ORM
+- **SQL Server** - Relational database
 
-### Arquitetura e Padrões
-- **Clean Architecture** - Separação de responsabilidades em 3 camadas
-- **CQRS (Command Query Responsibility Segregation)** - Separação de leitura e escrita
-- **MediatR 11.1.0** - Implementação do padrão Mediator
-- **Repository Pattern** - Abstração da camada de dados
-- **Factory Pattern** - Gerenciamento de conexões com banco de dados
-- **AutoMapper 12.0.1** - Mapeamento objeto-objeto
-- **Dependency Injection** - Inversão de controle nativa do .NET
+### Architecture and Patterns
+- **Clean Architecture** - Separation of concerns into 3 layers
+- **CQRS (Command Query Responsibility Segregation)** - Separation of reads and writes
+- **MediatR 11.1.0** - Mediator pattern implementation
+- **Repository Pattern** - Data layer abstraction
+- **Factory Pattern** - Database connection management
+- **AutoMapper 12.0.1** - Object-to-object mapping
+- **Dependency Injection** - Native .NET Inversion of Control
 
-### Recursos Adicionais
-- **Swagger/OpenAPI** - Documentação interativa da API
-- **Exception Middleware** - Tratamento centralizado de erros
-- **DTOs** - Objetos de transferência de dados imutáveis
+### Additional Features
+- **Swagger/OpenAPI** - Interactive API documentation
+- **Exception Middleware** - Centralized error handling
+- **DTOs** - Immutable data transfer objects
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 CatalogoFilmesApp/
@@ -55,36 +55,44 @@ CatalogoFilmesApp/
         └── DbConnectionFactory   # Factory de conexões
 ```
 
-## 🎯 Funcionalidades
+## 🎯 Features
 
-- ✅ **Criar filme** - Adicionar novos filmes ao catálogo
-- ✅ **Listar filmes** - Consultar todos os filmes cadastrados
-- ✅ **Buscar filme por ID** - Obter detalhes de um filme específico
-- ✅ **Atualizar filme** - Modificar informações de filmes existentes
-- ✅ **Remover filme** - Excluir filmes do catálogo
-- ✅ **Tratamento de erros** - Respostas padronizadas e informativas
-- ✅ **Documentação Swagger** - Interface interativa para testes
+- ✅ **Create movie** - Add new movies to the catalog
+- ✅ **List movies** - Query all registered movies
+- ✅ **Get movie by ID** - Retrieve details of a specific movie
+- ✅ **Update movie** - Modify existing movie information
+- ✅ **Remove movie** - Delete movies from the catalog
+- ✅ **Error handling** - Standardized and informative responses
+- ✅ **Swagger documentation** - Interactive interface for testing
 
-## 🛠️ Pré-requisitos
+## 🛠️ Prerequisites
 
-Antes de começar, certifique-se de ter instalado:
+Before you begin, make sure you have installed:
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) ou superior
-- [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (LocalDB, Express ou superior)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) ou [VS Code](https://code.visualstudio.com/) com C# extension
+- [NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or higher
+- [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads) (LocalDB, Express, or higher)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) or [VS Code](https://code.visualstudio.com/) with C# extension
 - [Git](https://git-scm.com/)
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-### 1. Clone o repositório
+### 1. Clone the repository
 ```bash
+
 git clone https://github.com/AtonementAndy/movies-catalog-webapi.git
+
 cd movies-catalog-webapi
 ```
 
-### 2. Configure o banco de dados
+```bash
+git clone https://github.com/AtonementAndy/movies-catalog-webapi.git
 
-Atualize a string de conexão no `appsettings.json` se necessário:
+cd movies-catalog-webapi
+```
+
+### 2. Configure the database
+
+Update the connection string in appsettings.json if necessary:
 
 ```json
 {
@@ -94,9 +102,9 @@ Atualize a string de conexão no `appsettings.json` se necessário:
 }
 ```
 
-### 3. Crie o banco de dados
+### 3. Create the database
 
-Execute o script SQL para criar a estrutura do banco:
+Run the SQL script to create the database structure:
 
 ```sql
 CREATE DATABASE FilmesDb;
@@ -116,33 +124,33 @@ CREATE TABLE Filmes (
 );
 ```
 
-### 4. Restaure as dependências
+### 4. Restore dependencies
 ```bash
 cd CatalogoFilmesApp
 dotnet restore
 ```
 
-### 5. Execute a aplicação
+### 5. Run the application
 ```bash
 dotnet run
 ```
 
-A API estará disponível em:
+The API will be available at:
 - **HTTP:** `http://localhost:5000`
 - **HTTPS:** `https://localhost:5001`
 - **Swagger:** `https://localhost:5001` (página inicial)
 
-## 📚 Documentação da API
+## 📚 API Documentation
 
-Após executar o projeto, acesse o Swagger UI para visualizar e testar todos os endpoints:
+After running the project, access the Swagger UI to view and test all endpoints:
 
 ```
 https://localhost:5001
 ```
 
-### Exemplos de Endpoints
+### Endpoint Examples
 
-#### Criar um novo filme
+#### Create a new movie
 ```http
 POST /api/filmes
 Content-Type: application/json
@@ -156,17 +164,17 @@ Content-Type: application/json
 }
 ```
 
-#### Listar todos os filmes
+#### List all movies
 ```http
 GET /api/filmes
 ```
 
-#### Buscar filme por ID
+#### Get movie by ID
 ```http
 GET /api/filmes/1
 ```
 
-#### Atualizar filme
+#### Update movie
 ```http
 PUT /api/filmes/1
 Content-Type: application/json
@@ -181,14 +189,14 @@ Content-Type: application/json
 }
 ```
 
-#### Deletar filme
+#### Delete movie
 ```http
 DELETE /api/filmes/1
 ```
 
-## 🏗️ Arquitetura
+## 🏗️ Architecture
 
-### Fluxo de Requisição
+### Request Flow
 
 ```
 Controller → MediatR → Command/Query Handler → Repository → Database
@@ -198,37 +206,38 @@ Controller → MediatR → Command/Query Handler → Repository → Database
                                              DTO
 ```
 
-### Camadas
+### Layers
 
-**API Layer (Apresentação)**
-- Recebe requisições HTTP
-- Valida entrada
-- Envia comandos/queries via MediatR
-- Retorna respostas formatadas
+**API Layer (Presentation)**
+  - Receives HTTP requests
+  - Validates input
+  - Dispatches commands/queries via MediatR
+  - Returns formatted responses
 
-**Application Layer (Aplicação)**
-- Implementa casos de uso
-- Orquestra fluxo de negócio
-- Handlers do MediatR (CQRS)
+**Application Layer**
+  - Implements use cases
+  - Orchestrates business flow
+  - MediatR handlers (CQRS)
 
-**Domain Layer (Domínio)**
-- Entidades de negócio
-- Interfaces e contratos
-- Regras de domínio
+**Domain Layer**
 
-**Infrastructure Layer (Infraestrutura)**
-- Acesso a dados (Dapper)
-- Implementação de repositórios
-- Serviços externos
+  - Business entities
+  - Interfaces and contracts
+  - Domain rules
 
-## 🧪 Testes
+**Infrastructure Layer**
+  - Data access (Dapper)
+  - Repository implementations
+  - External services
+
+## 🧪 Tests
 
 ```bash
 # Em desenvolvimento
 dotnet test
 ```
 
-## 📦 Pacotes Utilizados
+## 📦 Packages Used
 
 ```xml
 <PackageReference Include="Dapper" Version="2.1.35" />
@@ -241,52 +250,53 @@ dotnet test
 <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 ```
 
-## 🎓 Aprendizados e Objetivos
+## 🎓 Learnings and Objectives
 
-Este projeto foi desenvolvido com o objetivo de:
+This project was developed with the objective of:
 
-- ✅ Dominar o padrão **CQRS** com MediatR
-- ✅ Implementar **Clean Architecture** em APIs .NET
-- ✅ Utilizar **Dapper** como alternativa ao Entity Framework
-- ✅ Aplicar **Design Patterns** (Repository, Factory, Mediator)
-- ✅ Praticar **Dependency Injection** e **Inversion of Control**
-- ✅ Criar APIs RESTful seguindo boas práticas
-- ✅ Documentar APIs com Swagger/OpenAPI
+- ✅ Mastering the CQRS pattern with MediatR
+- ✅ Implementing Clean Architecture in .NET APIs
+- ✅ Using Dapper as an alternative to Entity Framework
+- ✅ Applying Design Patterns (Repository, Factory, Mediator)
+- ✅ Practicing **Dependency Injection** and **Inversion of Control**
+- ✅ Creating RESTful APIs following best practices
+- ✅ Documenting APIs with Swagger/OpenAPI
 
-## 🔄 Próximas Implementações
+## 🔄 Upcoming Implementations
 
-- [ ] Autenticação e Autorização (JWT)
-- [ ] Paginação e filtros avançados
-- [ ] Logging estruturado (Serilog)
-- [ ] Testes unitários e de integração
-- [ ] Cache com Redis
+- [ ] Authentication and Authorization (JWT)
+- [ ] Pagination and advanced filters
+- [ ] Structured logging (Serilog)
+- [ ] Unit and integration tests
+- [ ] Caching with Redis
 - [ ] Rate Limiting
-- [ ] Docker e Docker Compose
+- [ ] Docker and Docker Compose
 - [ ] CI/CD pipeline
-
-## 🤝 Contribuindo
+      
+## 🤝 Contributing
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
 
-1. Fazer um Fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abrir um Pull Request
+Fork the project
 
-## 📄 Licença
+1. Create your feature branch (`git checkout -b feature/MyFeature`)
+2. Commit your changes (`git commit -m 'Add some feature'`)
+3. Push to the branch (`git push origin feature/MyFeature`)
+4. Open a Pull Request
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## 📄 Licence
 
-## 👤 Autor
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-**Anderson (AtonementAndy)**
+## 👤 Author
+
+**Andre (AtonementAndy)**
 
 - GitHub: [@AtonementAndy](https://github.com/AtonementAndy)
 - LinkedIn: [Andre Santos](https://www.linkedin.com/in/andre-saantos/)
 
 ---
 
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
+⭐ If this project was useful to you, please consider giving it a star!
 
-**Feito com ❤️ e C#**
+**Made with ❤️ and C#**
