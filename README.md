@@ -299,4 +299,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ⭐ If this project was useful to you, please consider giving it a star!
 
-**Made with ❤️ and C#**
+Made with ❤️ by [AtonementAndy](https://github.com/AtonementAndy)
