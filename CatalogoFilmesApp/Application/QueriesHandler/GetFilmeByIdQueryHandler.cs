@@ -7,7 +7,8 @@ using MediatR;
 namespace CatalogoFilmesApp.Application.QueriesHandler
 {
     public class GetFilmeByIdQueryHandler(
-        IFilmesRepository filmesRepository, 
+        IFilmesRepository filmesRepository,
+        IMapper mapper, 
         ILogger<GetFilmeByIdQueryHandler> logger) : IRequestHandler<GetFilmeByIdQuery, FilmesDto>
     {
         public async Task<FilmesDto> Handle(GetFilmeByIdQuery request, CancellationToken cancellationToken)
@@ -15,7 +16,7 @@ namespace CatalogoFilmesApp.Application.QueriesHandler
             logger.LogInformation("Buscando filme por Id via CQRS.");
 
             var filme = await filmesRepository.GetByIdAsync(request.Id);
-            return filme;
+            return mapper.Map<FilmesDto>(filme);
         }
     }
 }

@@ -3,8 +3,8 @@ using MediatR;
 
 namespace CatalogoFilmesApp.Application.Queries
 {
-    public class GetFilmeByIdQuery(int id) : IRequest<FilmesDto>
+    public class GetFilmeByIdQuery(Guid id) : IRequest<FilmesDto>
     {
-        public int Id { get; set; } = id;
+        public Guid Id { get; set; } = id;
     }
 }
