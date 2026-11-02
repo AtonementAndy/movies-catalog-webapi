@@ -1,6 +1,5 @@
-﻿using CatalogoFilmesApp.Domain.DTOs;
+﻿using CatalogoFilmesApp.Application.DTOs;
 using CatalogoFilmesApp.Domain.Interfaces;
-using CatalogoFilmesApp.Domain.Models;
 using Dapper;
 
 namespace CatalogoFilmesApp.Infrastructure.Repositories
@@ -24,10 +23,10 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
             return await connection.QueryAsync<FilmesDto>(sql);
         }
 
-        public async Task<FilmesDto> GetByIdAsync(int id)
+        public async Task<FilmesDto> GetByIdAsync(Guid id)
         {
-            if (id <= 0)
-                throw new ArgumentException("Id deve ter um valor positivo.", nameof(id));
+            if (id == Guid.Empty)
+                throw new ArgumentException("Id é obrigatório.", nameof(id));
 
             _logger.LogInformation($"Buscando filme por Id {id}.");
             const string query = "SELECT * FROM Filmes WHERE Id = @Id AND Ativo = 1";
@@ -58,17 +57,16 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
             try
             {
                 using var connection = _dbConnectionFactory.CreateConnection();
-                var id = await connection.QuerySingleAsync<int>(query, criarFilmeDto);
+                var id = await connection.QuerySingleAsync<Guid>(query, criarFilmeDto);
 
-                return new FilmesDto
-                {
-                    Id = id,
-                    Titulo = criarFilmeDto.Titulo,
-                    Descricao = criarFilmeDto.Descricao,
-                    Autor = criarFilmeDto.Autor,
-                    DataCadastro = DateTime.UtcNow,
-                    Ativo = true
-                };
+                return new FilmesDto(
+                    id,
+                    criarFilmeDto.Titulo,
+                    criarFilmeDto.Descricao,
+                    criarFilmeDto.Autor,
+                    DateTime.UtcNow,
+                    true
+                );
 
             }
             catch (Exception ex)
@@ -79,10 +77,10 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Guid id)
         {
-            if (id <= 0)
-                throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
+            if (id == Guid.Empty)
+                throw new ArgumentException("Id é obrigatório.", nameof(id));
 
             _logger.LogInformation($"Desativando filme com Id {id}.");
             const string query = "UPDATE Filmes SET Ativo = 0 WHERE Id = @Id";
@@ -104,10 +102,10 @@ namespace CatalogoFilmesApp.Infrastructure.Repositories
             }
         }
 
-        public async Task UpdateAsync(int id, AtualizarFilmeDto atualizarFilmeDto)
+        public async Task UpdateAsync(Guid id, AtualizarFilmeDto atualizarFilmeDto)
         {
-            if (id <= 0)
-                throw new ArgumentException("Id deve ser um valor positivo.", nameof(id));
+            if (id == Guid.Empty)
+                throw new ArgumentException("Id é obrigatório.", nameof(id));
 
             //var filme = await GetByIdAsync(id) ?? throw new KeyNotFoundException($"Filme com Id {id} não encontrado.");
 

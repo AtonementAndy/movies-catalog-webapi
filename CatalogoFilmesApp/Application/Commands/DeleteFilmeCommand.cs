@@ -1,4 +1,4 @@
-﻿using CatalogoFilmesApp.Domain.DTOs;
+﻿using CatalogoFilmesApp.Application.DTOs;
 using MediatR;
 
 namespace CatalogoFilmesApp.Application.Commands

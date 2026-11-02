@@ -6,7 +6,7 @@ namespace CatalogoFilmesApp.Infrastructure.Service
 {
     public class DbConnectionFactory : IDbConnectionFactory
     {
-        private readonly string _connectionString = default!;
+        private readonly string _connectionString = string.Empty;
 
         public DbConnectionFactory(IConfiguration configuration)
         {

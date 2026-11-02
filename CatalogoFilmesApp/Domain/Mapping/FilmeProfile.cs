@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CatalogoFilmesApp.Domain.DTOs;
+using CatalogoFilmesApp.Application.DTOs;
 using CatalogoFilmesApp.Domain.Models;
 
 namespace CatalogoFilmesApp.Domain.Mapping

@@ -4,26 +4,25 @@ using CatalogoFilmesApp.API.Errors;
 
 namespace CatalogoFilmesApp.API.Middleware
 {
-    public class ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
+    public class ExceptionMiddleware(
+        RequestDelegate next, 
+        ILogger<ExceptionMiddleware> logger, 
+        IHostEnvironment env)
     {
-        private readonly RequestDelegate _next = next;
-        private readonly ILogger<ExceptionMiddleware> _logger = logger;
-        private readonly IHostEnvironment _env = env;
-
         public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                await _next(context);
+                await next(context);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
+                logger.LogError(ex, ex.Message);
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                var response = _env.IsDevelopment() ? 
-                    new ApiException(context.Response.StatusCode.ToString(), ex.Message, ex.StackTrace.ToString()) :
+                var response = env.IsDevelopment() ? 
+                    new ApiException(context.Response.StatusCode.ToString(), ex.Message, ex.StackTrace ?? "No stack trace available") :
                     new ApiException(context.Response.StatusCode.ToString(), ex.Message, "Internal Server Error");
 
                 var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };

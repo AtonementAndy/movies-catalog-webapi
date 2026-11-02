@@ -1,10 +1,10 @@
-﻿using CatalogoFilmesApp.Domain.DTOs;
+﻿using CatalogoFilmesApp.Application.DTOs;
 using MediatR;
 
 namespace CatalogoFilmesApp.Application.Commands
 {
     public class UpdateFilmeCommand : IRequest<AtualizarFilmeDto>
     {
-        public AtualizarFilmeDto AtualizarFilmeDto { get; set; } = default!;
+        public AtualizarFilmeDto AtualizarFilmeDto { get; set; } = new();
     }
 }

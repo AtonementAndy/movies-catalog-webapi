@@ -1,8 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CatalogoFilmesApp.Domain.Models
+﻿namespace CatalogoFilmesApp.Domain.Models
 {
     public class Filme
     {
@@ -13,6 +9,7 @@ namespace CatalogoFilmesApp.Domain.Models
             if (string.IsNullOrWhiteSpace(titulo))
                 throw new ArgumentException("Título é obrigatório.", nameof(titulo));
 
+            Id = Guid.NewGuid();
             Titulo = titulo;
             Descricao = descricao;
             Autor = autor;
@@ -20,24 +17,11 @@ namespace CatalogoFilmesApp.Domain.Models
             Ativo = true;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; private set; }
-
-        [Required]
-        [MaxLength(200)]
+        public Guid Id { get; private set; }
         public string Titulo { get; private set; } = string.Empty;
-
-        [Required]
-        [MaxLength(1000)]
         public string Descricao { get; private set; } = string.Empty;
-
-        [Required]
-        [MaxLength(100)]
         public string Autor { get; private set; } = string.Empty;
-
         public DateTime DataCadastro { get; private set; }
-
         public bool Ativo { get; private set; }
 
         public void Desativar() => Ativo = false;
